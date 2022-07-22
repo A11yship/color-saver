@@ -20,6 +20,11 @@ function App() {
   return (
     <>
       <h1> Color-Saver </h1>
+      <form className="form">
+        <input type="color" />
+        <input type="text" />
+        <button type="submit">Add</button>
+      </form>
       <div className="color_cards">
         {colors.map((color) => (
           <Card key={color.id} colorCode={color.colorCode} />
