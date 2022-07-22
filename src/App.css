@@ -1,0 +1,16 @@
+.color_cards {
+  border: 1px dotted red;
+  display: flex;
+  padding: 10px;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.color_card {
+  width: 100px;
+  height: 100px;
+  border: 2px black solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
