@@ -18,19 +18,21 @@ const colors = [
 
 function App() {
   return (
-    <>
+    <div className="app">
       <h1> Color-Saver </h1>
       <form className="form">
-        <input type="color" />
-        <input type="text" />
-        <button type="submit">Add</button>
+        <input type="color" className="form__input" />
+        <input type="text" className="form__input" />
+        <button type="submit" className="form__input">
+          Add
+        </button>
       </form>
       <div className="color_cards">
         {colors.map((color) => (
           <Card key={color.id} colorCode={color.colorCode} />
         ))}
       </div>
-    </>
+    </div>
   );
 }
 
