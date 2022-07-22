@@ -1,5 +1,6 @@
 import "./App.css";
 import { nanoid } from "nanoid";
+import Card from "./components/Card/Card";
 
 const colors = [
   { id: nanoid(), colorCode: "0d3b66" },
@@ -20,24 +21,7 @@ function App() {
     <>
       <h1> Color-Saver </h1>
       <div className="color_cards">
-        <div className="color_card">
-          <button type="button"> name </button>
-        </div>
-        <div className="color_card">
-          <button type="button"> name </button>
-        </div>
-        <div className="color_card">
-          <button type="button"> name </button>
-        </div>
-        <div className="color_card">
-          <button type="button"> name </button>
-        </div>
-        <div className="color_card">
-          <button type="button"> name </button>
-        </div>
-        <div className="color_card">
-          <button type="button"> name </button>
-        </div>
+        <Card />
       </div>
     </>
   );
