@@ -4,6 +4,7 @@ import { nanoid } from "nanoid";
 import "./App.css";
 
 import Card from "./components/Card/Card";
+import Form from "./components/Form/Form";
 
 function App() {
   const [colors, setColors] = useState([
@@ -26,32 +27,18 @@ function App() {
     setColors([...colors, { id: nanoid(), colorCode: newColor }]);
   }
 
-  function handleSelectColor(event) {
+  function handleSelectingColor(event) {
     setNewColor(event.target.value);
   }
 
   return (
     <div className="app">
       <h1> Color-Saver </h1>
-      <form className="form" onSubmit={handleSubmit}>
-        <input
-          type="color"
-          className="form__input"
-          name="newColor"
-          onInput={handleSelectColor}
-          value={newColor}
-        />
-        <input
-          type="text"
-          className="form__input"
-          name="newColor"
-          onInput={handleSelectColor}
-          value={newColor}
-        />
-        <button type="submit" className="form__input">
-          Add
-        </button>
-      </form>
+      <Form
+        onAddColor={handleSubmit}
+        onSelectingColor={handleSelectingColor}
+        currentColor={newColor}
+      />
       <div className="color_cards">
         {colors.map((color) => (
           <Card key={color.id} colorCode={color.colorCode} />
