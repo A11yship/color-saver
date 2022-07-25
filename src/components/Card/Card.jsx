@@ -1,20 +1,26 @@
 import "./Card.css";
 
-export default function Card({ colorCode }) {
+export default function Card({ color, onDelete }) {
   return (
-    <div className="card" style={{ backgroundColor: colorCode }}>
-      <button type="button" className="delete">
+    <div className="card" style={{ backgroundColor: color.colorCode }}>
+      <button
+        type="button"
+        className="delete"
+        onClick={() => {
+          onDelete(color.id);
+        }}
+      >
         {" "}
         ⓧ{" "}
       </button>
       <button
         type="button"
         onClick={() => {
-          navigator.clipboard.writeText(colorCode);
+          navigator.clipboard.writeText(color.colorCode);
         }}
       >
         {" "}
-        {colorCode}{" "}
+        {color.colorCode}{" "}
       </button>
     </div>
   );

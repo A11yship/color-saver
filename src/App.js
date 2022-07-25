@@ -31,6 +31,11 @@ function App() {
     setNewColor(event.target.value);
   }
 
+  function handleDelete(currentId) {
+    console.log(currentId);
+    setColors(colors.filter((color) => color.id !== currentId));
+  }
+
   return (
     <div className="app">
       <h1> Color-Saver </h1>
@@ -41,7 +46,7 @@ function App() {
       />
       <div className="color_cards">
         {colors.map((color) => (
-          <Card key={color.id} colorCode={color.colorCode} />
+          <Card key={color.id} color={color} onDelete={handleDelete} />
         ))}
       </div>
     </div>
