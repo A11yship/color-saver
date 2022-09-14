@@ -3,9 +3,11 @@
   height: 100px;
   border: 2px black solid;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   position: relative;
+  gap: 5px;
 }
 
 .delete {
@@ -15,4 +17,8 @@
   position: absolute;
   top: -5px;
   right: 5px;
+}
+
+.changeColor {
+  width: 60px;
 }

@@ -36,6 +36,10 @@ function App() {
     setColors(colors.filter((color) => color.id !== currentId));
   }
 
+  function handleEdit() {
+    setColors(colors.map);
+  }
+
   return (
     <div className="app">
       <h1> Color-Saver </h1>
@@ -46,7 +50,12 @@ function App() {
       />
       <div className="color_cards">
         {colors.map((color) => (
-          <Card key={color.id} color={color} onDelete={handleDelete} />
+          <Card
+            key={color.id}
+            color={color}
+            onDelete={handleDelete}
+            onEdit={handleEdit}
+          />
         ))}
       </div>
     </div>

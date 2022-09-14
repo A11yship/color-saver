@@ -1,6 +1,6 @@
 import "./Card.css";
 
-export default function Card({ color, onDelete }) {
+export default function Card({ color, onDelete, onEdit }) {
   return (
     <div className="card" style={{ backgroundColor: color.colorCode }}>
       <button
@@ -13,6 +13,14 @@ export default function Card({ color, onDelete }) {
         {" "}
         ⓧ{" "}
       </button>
+
+      <input
+        type="text"
+        className="changeColor"
+        value={color.colorCode}
+        onChange={onEdit}
+      />
+
       <button
         type="button"
         onClick={() => {
